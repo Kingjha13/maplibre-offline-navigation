@@ -14,9 +14,9 @@ Built with MapLibre GL Native and Kotlin — no internet required, no API keys, 
 > *Tap a building → get a route → start walking.*
 
 <br/>
-
-![App Demo](app/screenshots/img.png)
-
+ 
+<img src="app/screenshots/img.png" height="620" width="350" alt="App Demo"/>
+ 
 </div>
 
 ---
