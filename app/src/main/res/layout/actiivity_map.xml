@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -14,33 +13,99 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/search_bar_background"
         android:elevation="8dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="15dp">
+        android:paddingHorizontal="14dp">
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
             android:src="@android:drawable/ic_menu_search"
             app:tint="#757575" />
 
         <AutoCompleteTextView
             android:id="@+id/searchBar"
             android:layout_width="0dp"
-            android:layout_height="54dp"
+            android:layout_height="52dp"
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:completionThreshold="1"
-            android:hint="Search campus buildings..."
+            android:hint="Search campus buildings…"
+            android:imeOptions="actionSearch"
             android:inputType="textCapWords"
+            android:maxLines="1"
             android:paddingStart="12dp"
+            android:singleLine="true"
             android:textColor="#212121"
             android:textColorHint="#9E9E9E"
-            android:textSize="16sp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
-</RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/destinationCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/card_background"
+        android:elevation="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="18dp"
+        android:paddingVertical="16dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="14dp"
+            android:src="@android:drawable/ic_menu_myplaces"
+            app:tint="#E53935" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDestName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Destination"
+                android:textColor="#212121"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDestMeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Calculating route…"
+                android:textColor="#757575"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnClearRoute"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Clear route"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:tint="#757575" />
+
+    </LinearLayout>
+
+</FrameLayout>
